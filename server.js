@@ -1,46 +1,14 @@
-console.log('START SERVER')
-console.time('START APPLICATION')
-require("agentkeepalive");
-require("applicationinsights");
-require("baobab");
-require("baobab-react");
-require("bluebird");
-require("body-parser");
-require("classnames");
-require("coffee-script");
-require("cookie-cutter");
-require("debuglog");
-require("director");
-require("exenv");
-require("express");
-require("express-domain-middleware");
-require("express-ipfilter");
-require("express-useragent");
-require("handlebars");
-require("maxmind");
-require("merge");
-require("moment");
-require("morgan");
-require("mustache");
-require("newrelic");
-require("node-bourbon");
-require("node-cjsx");
-require("node-polyglot");
-require("numeral");
-require("object-assign");
-require("object-path");
-require("quantize");
-require("query-string");
-require("range_check");
-require("react");
-require("react-helmet");
-require("react-router");
-require("react-textarea-autosize");
-require("request");
-require("request-ip");
-require("require-dir");
-require("sendgrid");
-require("simply-deferred");
-require("st");
-require("underscore");
-console.timeEnd('START APPLICATION')
+﻿var express = require('express');
+var app = express();
+var port = process.env.port || 1337
+
+app.get('/', function (req, res) {
+    res.send('Hello World!');
+});
+
+var server = app.listen(port, function () {
+    var host = server.address().address;
+    var port = server.address().port;
+
+    console.log('Example app listening at http://%s:%s', host, port);
+});

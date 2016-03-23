@@ -1,71 +1,15 @@
 {
-  "name": "Musixmatch",
-  "version": "4.2.0",
-  "description": "largest lyrics database in the world",
+  "name": "NodejsWebApp1",
+  "private": true,
+  "version": "0.0.0",
+  "description": "NodejsWebApp1",
   "main": "server.js",
-  "scripts": {
-    "postinstall": "(cd node_modules/musixmatch && npm install --production && cd ../musixmatch-v2 && npm install --production)",
-    "develop": "export NODE_ENV=development; npm run webpack:develop & npm run server:develop",
-    "build": "export NODE_ENV=production; npm run webpack:build && npm run sourcemaps:move && npm run cdn && npm run clean:build",
-    "profile": "export NODE_ENV=production; npm run webpack:profile",
-    "server:develop": "nodemon app/server/server.coffee -e coffee",
-    "webpack:develop": "webpack-dev-server --host 0.0.0.0 --port 3001 -c --hot --output-public-path http://local.musixmatch.com:3001/",
-    "webpack:build": "webpack --progress -c",
-    "webpack:profile": "webpack  --progress -c --profile --json > webpack-profile.json",
-    "sourcemaps:move": "mv build/sourcemaps/js build/js/dapaura",
-    "cdn": "npm run cdn:assets && npm run cdn:build",
-    "cdn:assets": "s3-cli --config config/s3.cfg -P sync cdn s3://mxm-static-hacks/site --add-header='Cache-Control':'max-age=315360000, no-transform, public'",
-    "cdn:build": "s3-cli --config config/s3.cfg -P sync build s3://mxm-static-hacks/site --add-header='Cache-Control':'max-age=315360000, no-transform, public'",
-    "clean:build": "rm -rf build",
-    "css:critical": "export NODE_ENV=production; mkdir -p public/css/critical && coffee scripts/css-critical.coffee",
-    "swap": "scripts/swap-slots-smart.sh",
-    "staging:stop": "scripts/stop-staging.sh",
-    "staging:start": "scripts/start-staging.sh",
-    "test": "echo 'no test specified'",
-    "start": "export NODE_ENV=production; node server.js"
-  },
-  "author": "Musixmatch",
-  "license": "Commercial",
-  "engines": {
-    "node": "v4.2.4"
-  },
-  "browser": {
-    "diff_match_patch": "./vendor/js/diff_match_patch.js",
-    "syncatore": "./vendor/js/syncatore.js",
-    "cssua": "./vendor/js/cssuseragent.js",
-    "messenger": "./bower_components/messenger/build/js/messenger.js",
-    "foundation": "./bower_components/foundation/js/foundation.js",
-    "modernizr": "./bower_components/modernizr/modernizr.js",
-    "respimage": "./vendor/js/respimage.js",
-    "./app/lib/session.coffee": "./app/lib/session-client.coffee",
-    "./app/lib/send-http-headers.coffee": "./app/lib/send-http-headers-client.coffee"
-  },
-  "devDependencies": {
-    "bundle-loader": "~0.5.2",
-    "cjsx-loader": "^2.0.1",
-    "coffee-loader": "~0.7.2",
-    "coffee-react-transform": "^3.1.0",
-    "css-loader": "^0.19.0",
-    "cssnano": "^3.5.2",
-    "exports-loader": "~0.6.2",
-    "expose-loader": "^0.6.0",
-    "extract-text-webpack-plugin": "^0.8.1",
-    "imports-loader": "~0.6.3",
-    "jasmine-expect": "^1.22.2",
-    "jest-cli": "^0.1.18",
-    "json-loader": "^0.5.1",
-    "node-libs-browser": "^0.5.2",
-    "node-sass": "^3.4.2",
-    "node-sass-asset-functions": "0.0.9",
-    "nodemon": "^1.2.1",
-    "react-hot-loader": "~1.2.7",
-    "s3-cli": "~0.11.1",
-    "sass-loader": "^3.1.2",
-    "webpack": "^1.9.10",
-    "webpack-dev-server": "~1.8.0"
+  "author": {
+    "name": "ctsodev1",
+    "email": ""
   },
   "dependencies": {
-    "agentkeepalive": "^1.2.0",
+	"agentkeepalive": "^1.2.0",
     "applicationinsights": "^0.15.8",
     "baobab": "^1.1.0",
     "baobab-react": "^0.1.1",
@@ -111,23 +55,31 @@
     "underscore": "~1.6.0",
     "velocity-animate": "^1.2.1"
   },
-  "jest": {
-    "scriptPreprocessor": "./jest-preprocessor.js",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/node_modules/newrelic"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "coffee",
-      "cjsx"
-    ],
-    "testFileExtensions": [
-      "coffee",
-      "cjsx"
-    ],
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/musixmatch"
-    ]
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-zip": "^3.0.2",
+    "minimist": "^1.2.0"
+	"bundle-loader": "~0.5.2",
+    "cjsx-loader": "^2.0.1",
+    "coffee-loader": "~0.7.2",
+    "coffee-react-transform": "^3.1.0",
+    "css-loader": "^0.19.0",
+    "cssnano": "^3.5.2",
+    "exports-loader": "~0.6.2",
+    "expose-loader": "^0.6.0",
+    "extract-text-webpack-plugin": "^0.8.1",
+    "imports-loader": "~0.6.3",
+    "jasmine-expect": "^1.22.2",
+    "jest-cli": "^0.1.18",
+    "json-loader": "^0.5.1",
+    "node-libs-browser": "^0.5.2",
+    "node-sass": "^3.4.2",
+    "node-sass-asset-functions": "0.0.9",
+    "nodemon": "^1.2.1",
+    "react-hot-loader": "~1.2.7",
+    "s3-cli": "~0.11.1",
+    "sass-loader": "^3.1.2",
+    "webpack": "^1.9.10",
+    "webpack-dev-server": "~1.8.0"
   }
 }
