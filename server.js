@@ -1,6 +1,46 @@
-var http = require('http')
-var port = process.env.PORT || 1337;
-http.createServer(function(req, res) {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello World\n');
-}).listen(port);
+console.log('START SERVER')
+console.time('START APPLICATION')
+require("agentkeepalive");
+require("applicationinsights");
+require("baobab");
+require("baobab-react");
+require("bluebird");
+require("body-parser");
+require("classnames");
+require("coffee-script");
+require("cookie-cutter");
+require("debuglog");
+require("director");
+require("exenv");
+require("express");
+require("express-domain-middleware");
+require("express-ipfilter");
+require("express-useragent");
+require("handlebars");
+require("maxmind");
+require("merge");
+require("moment");
+require("morgan");
+require("mustache");
+require("newrelic");
+require("node-bourbon");
+require("node-cjsx");
+require("node-polyglot");
+require("numeral");
+require("object-assign");
+require("object-path");
+require("quantize");
+require("query-string");
+require("range_check");
+require("react");
+require("react-helmet");
+require("react-router");
+require("react-textarea-autosize");
+require("request");
+require("request-ip");
+require("require-dir");
+require("sendgrid");
+require("simply-deferred");
+require("st");
+require("underscore");
+console.timeEnd('START APPLICATION')

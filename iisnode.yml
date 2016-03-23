@@ -1,0 +1,16 @@
+nodeProcessCountPerApplication: 8
+maxConcurrentRequestsPerProcess: 165535
+loggingEnabled: true
+maxLogFileSizeInKB: 1280
+maxTotalLogFileSizeInKB: 1024
+maxLogFiles: 20
+flushResponse: true
+watchedFiles: robots.txt
+gracefulShutdownTimeout: 120000
+maxNamedPipeConnectionRetry: 1024
+namedPipeConnectionRetryDelay: 250
+maxNamedPipeConnectionPoolSize: 8192
+maxNamedPipePooledConnectionAge: 30000
+asyncCompletionThreadCount: 16
+
+nodeProcessCommandLine: "D:\Program Files (x86)\nodejs\4.2.4\node.exe"
